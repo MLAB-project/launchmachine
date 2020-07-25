@@ -13,11 +13,10 @@ void manual_launch()
   {
     delay(2000);
     if (!(PIND & 0b00010000)) 
-    {
-      Serial.println("on");
-          
+    {          
       digitalWrite(MAGNET,HIGH);
       delay(TIMEOUT);
+      //Serial.println("on");
     }
   }
   digitalWrite(MAGNET,LOW);
@@ -58,8 +57,8 @@ void loop()
       }
     }
   };
-  Serial.print(flag);
-  Serial.print("*");
+  //Serial.print(flag);
+  //Serial.print("*");
   if ((flag == SICHER))
   {
     flag2=LOW;
@@ -83,16 +82,15 @@ void loop()
       }
     }
   };
-  Serial.print(flag);
-  Serial.print("#");
+  //Serial.print(flag);
+  //Serial.print("#");
   if ((flag == SICHER)&&(flag2 == LOW))
-  {
-    Serial.print("on");
-        
+  {        
     digitalWrite(MAGNET,HIGH);
     delay(TIMEOUT);
     digitalWrite(MAGNET,LOW);
     flag2 = HIGH;
+    //Serial.print("on");
   }
-  Serial.println(flag2);
+  //Serial.println(flag2);
 }
